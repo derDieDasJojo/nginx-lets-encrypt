@@ -1,0 +1,12 @@
+letsencrypt:
+  build: .
+  #image: derdiedasjojo/nginx-reverse-proxy
+  ports: 
+  - 80:80 
+  - 443:443 
+  env_file: secrets.env
+  volumes:
+  - /home/core/letsencrypt:/etc/letsencrypt 
+  - /home/core/nginx:/etc/nginx/sites-enabled 
+  external_links:
+  - rancher-server:rancher-server
