@@ -7,6 +7,6 @@ letsencrypt:
   env_file: secrets.env
   volumes:
   - /home/core/letsencrypt:/etc/letsencrypt 
-  - /home/core/nginx:/etc/nginx/sites-enabled 
+  - ./sites:/etc/nginx/sites-enabled 
   external_links:
-  - rancher-server:rancher-server
+  - container-name:container-name
